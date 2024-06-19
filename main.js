@@ -1,15 +1,28 @@
-const grid = document.querySelector(".grid");
+const GRIDSIDE = 600;
+let squaresPerSide = 16;
 
-const gridSize = 16;
+const gridArea = document.querySelector("#grid-area");
+gridArea.style.width = `${GRIDSIDE}px`;
+gridArea.style.height = `${GRIDSIDE}px`;
 
+function setBackgroundColor() {
+    this.style.backgroundColor = "black";
+}
+function createGridCells() {
+    const numSquares = squaresPerSide * squaresPerSide;
+    const squareLength = `${GRIDSIDE / squaresPerSide - 2}px`;
 
-// 16 x 16 grid
-for (let i = 1; i <= gridSize; i++) {
-    for (let j = 1; j <=gridSize; j++) {
-        const square = document.createElement("div");
-        square.setAttribute("style", "color: black; width: 100px; height: 100px;");
-        square.style.border = "5px solid #000000";
-        square.style.backgroundColor =  "transparent";
-        grid.appendChild(square);
+    for (let i = 0; i < numSquares; i++) {
+        const gridCell = document.createElement("div");
+
+        gridCell.style.width = gridCell.style.height = squareLength;
+        gridCell.className = "cell";
+        //gridCell.classList.add("cell");
+
+        gridArea.appendChild(gridCell);
+
+        gridCell.addEventListener("mouseover", setBackgroundColor);
     }
 }
+
+createGridCells();
