@@ -17,3 +17,8 @@ body {
 .cell {
     border: 1px solid whitesmoke;
 }
+
+#new-grid {
+    display: flex;
+    margin: 50px auto;
+}
