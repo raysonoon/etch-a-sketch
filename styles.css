@@ -10,8 +10,11 @@ body {
 #grid-area {
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
+    min-width: 600px;
+    min-height: 600px;
     background-color: white;
-    margin: 100px auto;
+    margin: 20px auto 100px auto;
 }
 
 .cell {
@@ -20,5 +23,5 @@ body {
 
 #new-grid {
     display: flex;
-    margin: 50px auto;
+    margin: 40px auto 20px auto;
 }
