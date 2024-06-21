@@ -8,7 +8,7 @@ gridArea.style.height = `${GRIDSIDE}px`;
 function setBackgroundColor() {
     this.style.backgroundColor = "black";
 }
-function createGridCells() {
+function createGridCells(squaresPerSide) {
     const numSquares = squaresPerSide * squaresPerSide;
     const squareLength = `${GRIDSIDE / squaresPerSide - 2}px`;
 
@@ -17,21 +17,21 @@ function createGridCells() {
 
         gridCell.style.width = gridCell.style.height = squareLength;
         gridCell.className = "cell";
-        //gridCell.classList.add("cell");
-
         gridArea.appendChild(gridCell);
 
         gridCell.addEventListener("mouseover", setBackgroundColor);
     }
 }
 
+function removeGridCells() {
+    gridArea.textContent = "";
+}
+
 function newGrid() {
     let newSquaresPerSide = parseInt(prompt("Enter size of new grid (Max: 100)"));
     if (typeof newSquaresPerSide == "number" && newSquaresPerSide <= 100) {
-        squaresPerSide = newSquaresPerSide;
-        // Empty old grid
-        gridArea.textContent = "";
-        createGridCells();
+        removeGridCells();
+        createGridCells(newSquaresPerSide);
     } else {
         alert("Invalid value!");
     }
@@ -41,4 +41,4 @@ function newGrid() {
 const newGridBtn = document.querySelector("#new-grid");
 newGridBtn.addEventListener("click", newGrid);
 
-createGridCells();
+createGridCells(squaresPerSide);
