@@ -18,15 +18,21 @@ body {
 
 #grid-area {
     display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    width: 600px;
-    height: 600px;
+    flex-direction: column;
+    /*flex-wrap: wrap;
+    overflow: hidden;*/
     background-color: white;
     margin: 20px auto 100px auto;
 }
 
-.cell {
+.row {
+    display: flex;
+    flex: 1;
+}
+
+.col {
+    /* Flex 1 to make square */
+    flex: 1;
     border: 1px solid whitesmoke;
 }
 
