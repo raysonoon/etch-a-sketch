@@ -11,6 +11,10 @@ body {
     align-items: center;
 }
 
+h1 {
+    margin-top: 20px;
+}
+
 .button-container {
     display: flex;
     gap: 20px;
@@ -19,8 +23,6 @@ body {
 #grid-area {
     display: flex;
     flex-direction: column;
-    /*flex-wrap: wrap;
-    overflow: hidden;*/
     background-color: white;
     margin: 20px auto 100px auto;
 }
