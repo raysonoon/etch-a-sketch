@@ -27,7 +27,7 @@ function createGridCells() {
 
 function newGrid() {
     let newSquaresPerSide = parseInt(prompt("Enter size of new grid (Max: 100)"));
-    if (newSquaresPerSide != null && newSquaresPerSide <= 100) {
+    if (typeof newSquaresPerSide == "number" && newSquaresPerSide <= 100) {
         squaresPerSide = newSquaresPerSide;
         // Empty old grid
         gridArea.textContent = "";
