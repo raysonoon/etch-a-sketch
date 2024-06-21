@@ -5,6 +5,8 @@ const gridArea = document.querySelector("#grid-area");
 gridArea.style.width = `${GRIDSIDE}px`;
 gridArea.style.height = `${GRIDSIDE}px`;
 
+createGridCells(squaresPerSide);
+
 function setBackgroundColor() {
     this.style.backgroundColor = "black";
 }
@@ -30,6 +32,7 @@ function createGridCells(squaresPerSide) {
 function removeGridCells() {
     gridArea.textContent = "";
 }
+
 function newGrid() {
     let newSquaresPerSide = parseInt(prompt("Enter size of new grid (Max: 100)"));
     if (typeof newSquaresPerSide == "number" && newSquaresPerSide <= 100) {
@@ -43,5 +46,3 @@ function newGrid() {
 // Event handling for reset game button
 const newGridBtn = document.querySelector("#new-grid");
 newGridBtn.addEventListener("click", newGrid);
-
-createGridCells(squaresPerSide);
