@@ -5,14 +5,23 @@
 
 body {
     background-color: chocolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
 }
 
 #grid-area {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
-    min-width: 600px;
-    min-height: 600px;
+    width: 600px;
+    height: 600px;
     background-color: white;
     margin: 20px auto 100px auto;
 }
